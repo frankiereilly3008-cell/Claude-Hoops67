@@ -1,0 +1,359 @@
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: radial-gradient(circle at top, #2a2a2a, #0d0d0d 70%);
+  color: #f0e6d2;
+  text-align: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+h1 {
+  color: #d4af37;
+  font-size: 2.5em;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
+  margin-bottom: 10px;
+}
+
+#scoreboard {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #d4af37;
+  letter-spacing: 1px;
+}
+
+#question {
+  font-size: 1.3em;
+  margin: 25px 0;
+  color: #f0e6d2;
+}
+
+#shop-screen {
+  max-width: 320px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #d4af37;
+  border-radius: 10px;
+  background-color: #1a1a1a;
+}
+
+#shop-screen h2 {
+  color: #d4af37;
+  margin-top: 0;
+}
+
+.shop-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.shop-item p {
+  margin: 0;
+  color: #f0e6d2;
+}
+
+.buy-btn {
+  padding: 8px 14px;
+  font-size: 0.9em;
+  font-family: inherit;
+  border: 1px solid #d4af37;
+  border-radius: 6px;
+  background-color: transparent;
+  color: #d4af37;
+  cursor: pointer;
+}
+
+.buy-btn:hover {
+  background-color: #d4af37;
+  color: #1a1a1a;
+}
+
+.answer-btn {
+  display: block;
+  width: 320px;
+  margin: 12px auto;
+  padding: 14px 20px;
+  font-size: 1em;
+  font-family: inherit;
+  border: 1px solid #d4af37;
+  border-radius: 8px;
+  background-color: #1a1a1a;
+  color: #d4af37;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.answer-btn[hidden] {
+  display: none;
+}
+
+.answer-btn:hover {
+  background-color: #d4af37;
+  color: #1a1a1a;
+}
+
+#feedback {
+  font-weight: bold;
+  font-size: 1.2em;
+  min-height: 1.5em;
+  color: #d4af37;
+}
+
+.confetti-piece {
+  position: fixed;
+  top: -10px;
+  width: 8px;
+  height: 14px;
+  opacity: 0.9;
+  animation: confetti-fall 1.2s linear forwards;
+  z-index: 999;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+#hacker-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 20, 0, 0.85);
+  color: #00ff66;
+  font-family: "Courier New", monospace;
+  font-size: 2.5em;
+  letter-spacing: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 0 10px #00ff66;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+#hacker-overlay.active {
+  opacity: 1;
+  animation: glitch 0.6s steps(2, end) 3;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(-4px, 2px);
+  }
+  50% {
+    transform: translate(4px, -2px);
+  }
+  75% {
+    transform: translate(-2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pop {
+  animation: pop 0.4s ease;
+}
+
+@keyframes celebrate {
+  0% {
+    transform: scale(1);
+    text-shadow: none;
+  }
+  40% {
+    transform: scale(1.6);
+    text-shadow: 0 0 20px #fff2b0, 0 0 40px #d4af37;
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 8px #d4af37;
+  }
+}
+
+.celebrate {
+  animation: celebrate 0.6s ease;
+}
+
+#next-btn,
+#shoot-btn,
+#continue-btn,
+#play-again-btn {
+  padding: 12px 28px;
+  font-size: 1em;
+  font-family: inherit;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to bottom, #e6c766, #b8912e);
+  color: #1a1a1a;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+#next-btn:hover,
+#shoot-btn:hover,
+#continue-btn:hover,
+#play-again-btn:hover {
+  background: linear-gradient(to bottom, #f2d685, #caa23c);
+}
+
+#shot-type {
+  font-weight: bold;
+  font-size: 1.3em;
+  letter-spacing: 1px;
+  color: #d4af37;
+}
+
+#hoop {
+  position: relative;
+  width: 140px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+#backboard {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 100px;
+  height: 50px;
+  background-color: #f0e6d2;
+  border: 3px solid #d4af37;
+  border-radius: 4px;
+}
+
+#rim {
+  position: absolute;
+  top: 48px;
+  left: 10px;
+  width: 120px;
+  height: 20px;
+  border: 5px solid #d4af37;
+  border-radius: 50%;
+}
+
+#net {
+  position: absolute;
+  top: 60px;
+  left: 30px;
+  width: 80px;
+  height: 55px;
+  background:
+    repeating-linear-gradient(
+      100deg,
+      rgba(240, 230, 210, 0.6) 0px,
+      rgba(240, 230, 210, 0.6) 2px,
+      transparent 2px,
+      transparent 10px
+    ),
+    repeating-linear-gradient(
+      80deg,
+      rgba(240, 230, 210, 0.6) 0px,
+      rgba(240, 230, 210, 0.6) 2px,
+      transparent 2px,
+      transparent 10px
+    );
+  clip-path: polygon(0% 0%, 100% 0%, 78% 100%, 22% 100%);
+}
+
+#ball {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin: 20px auto;
+  background: radial-gradient(circle at 32% 30%, #f7dfa0, #d4af37 55%, #8a6d1d 100%);
+  border-radius: 50%;
+  box-shadow: inset -4px -4px 8px rgba(0, 0, 0, 0.4), 0 3px 6px rgba(0, 0, 0, 0.5);
+  transition: transform 0.6s ease;
+}
+
+#ball::before,
+#ball::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(30, 20, 5, 0.55);
+}
+
+#ball::before {
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+#ball::after {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  transform: translateY(-50%);
+}
+
+#ball.perfect {
+  transform: translate(0, -180px);
+}
+
+#ball.good {
+  transform: translate(30px, -150px);
+}
+
+#ball.miss {
+  transform: translate(70px, -70px);
+}
+
+#meter {
+  position: relative;
+  width: 300px;
+  height: 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(
+    to right,
+    grey 0%,
+    orange 30%,
+    limegreen 50%,
+    orange 70%,
+    grey 100%
+  );
+}
+
+#meter-marker {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+}

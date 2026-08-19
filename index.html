@@ -3,14 +3,57 @@
   <head>
     <meta charset="UTF-8">
     <title>Claude Hoops</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1>Claude Hoops</h1>
-    <p id="question">What is a variable?</p>
-    <button class="answer-btn">A labelled box that stores a value</button>
-    <button class="answer-btn">A type of loop</button>
-    <button class="answer-btn">A CSS color</button>
-    <p id="feedback"></p>
+    <p id="scoreboard">Score: 0</p>
+    <button id="shop-btn">Shop</button>
+
+    <div id="shop-screen" hidden>
+      <h2>Shop</h2>
+
+      <div class="shop-item">
+        <p>Confetti</p>
+        <button class="buy-btn" data-effect="confetti" data-cost="20">Buy (20 pts)</button>
+      </div>
+
+      <div class="shop-item">
+        <p>Hacker Mode</p>
+        <button class="buy-btn" data-effect="hacker" data-cost="30">Buy (30 pts)</button>
+      </div>
+
+      <p id="shop-message"></p>
+      <button id="close-shop-btn">Close</button>
+    </div>
+
+    <div id="quiz-screen">
+      <p id="question">What is a variable?</p>
+      <button class="answer-btn">A labelled box that stores a value</button>
+      <button class="answer-btn">A type of loop</button>
+      <button class="answer-btn">A CSS color</button>
+      <p id="feedback"></p>
+      <button id="next-btn" hidden>Next Question</button>
+      <button id="play-again-btn" hidden>Play Again</button>
+    </div>
+
+    <div id="game-screen" hidden>
+      <div id="hoop">
+        <div id="backboard"></div>
+        <div id="rim"></div>
+        <div id="net"></div>
+      </div>
+      <div id="ball"></div>
+      <p id="shot-type"></p>
+      <div id="meter">
+        <div id="meter-marker"></div>
+      </div>
+      <button id="shoot-btn">Shoot!</button>
+      <p id="shot-result"></p>
+      <button id="continue-btn" hidden>Continue Quiz</button>
+    </div>
+
+    <div id="hacker-overlay">ACCESS GRANTED</div>
 
     <script src="script.js"></script>
   </body>

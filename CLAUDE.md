@@ -9,20 +9,43 @@ I'm a **complete beginner**. I have **no experience with JavaScript, HTML, CSS, 
 **Very important — how to talk to me:**
 - Word everything at a low, beginner level. Explain like I've never seen code before, because I haven't.
 - Compare new things to everyday stuff I already understand (e.g. "a variable is like a labelled box you put something in").
-- Go **one step at a time, slowly building**. Don't dump lots of new ideas at once. Small piece, explain it, let it sink in, then the next piece.
-- **Explain every line as you build it** — I want to understand what each piece does and why, not just have working code handed to me.
+- **Pacing (updated):** I used to want every single line explained one at a time with a pause after each. Now that I've got the hang of the basics (from the click counter practice project), I just want a **rough, high-level understanding** of what code does and why — not a granular line-by-line walkthrough by default. If I ask about one specific line or concept, zoom in and explain just that in detail. Otherwise, keep explanations short and conceptual.
+- **I don't want to manually type/write the code myself.** Write and edit the actual code for me — my job is to direct the project and understand what it does, not type it in myself. Don't ask me to type code snippets unless I specifically say I want to practice writing something.
 - If you use a technical word, define it in plain English the first time.
+- **Always cite file names and line numbers** when talking about a piece of code (e.g. "script.js, lines 141-158") so I can actually find it in my editor while you're explaining it.
 - Feel free to ask me questions if you need more info to help me well.
 
-## Current focus (practice project before the real one)
+## Learning Preferences
 
-Before diving into Claude Hoops itself, I'm doing a smaller practice project first: a **click counter** — a button that, when clicked, increases a number shown on the page (e.g. "You've clicked 3 times"). It's simple on purpose: it still covers the core loop I'll reuse everywhere in Claude Hoops (an HTML element → JavaScript finds it → an event listener reacts to a click → the page updates), but without the extra complexity of quiz logic or animation.
+When explaining or generating code for me, default to explaining what each
+chunk/block does in plain English (its purpose, inputs, and outputs) rather
+than walking through every line. However, when a concept is new to me or is
+foundational/important (e.g. a pattern I'll reuse often, or something core
+to how the app works), break it down line by line so I actually understand
+the mechanics, not just the result.
 
-This is being built in its own separate files — `clicker.html` and `clicker.js` — kept apart from the real project files (`index.html`, `script.js`) so nothing gets tangled.
+I'm a beginner learning JavaScript, HTML, Python, and Git while building
+real projects, so lean toward teaching over just producing working code.
 
-**How to pace this specifically:** go even slower than usual here. Add one small piece at a time — sometimes even a single tag or a single line — and stop for confirmation before adding the next. Don't pre-build multiple pieces (e.g. a full HTML skeleton, or a finished function) and explain them afterward; build them WITH me step by step, since I said explicitly I don't want things dumped ahead of my understanding.
+## Practice project (done)
 
-Once the click counter fully makes sense (the HTML pieces, and the JavaScript that finds the button, counts clicks, and updates the text), we'll go back to building Claude Hoops itself in `index.html`/`script.js`, applying the same ideas to the real game.
+Before diving into Claude Hoops itself, I did a smaller practice project first: a **click counter** — a button that, when clicked, increases a number shown on the page. This lives in `clicker.html`/`clicker.js` (the built-together version) and `practice.html`/`practice.js` (a blank version I rebuilt myself from scratch to test my understanding, with help debugging). Both are done and working — this phase is complete, kept around as reference, not something to keep building on.
+
+## Current focus (the real project)
+
+Now building Claude Hoops itself in `index.html`/`script.js`/`style.css`. Progress so far:
+- 20-question quiz bank, shuffled into random order each page load, with shuffled answer order per question too (so the correct answer isn't always in the same spot).
+- Score tracking with a visible scoreboard.
+- Every 5 correct answers in a row unlocks a shot: a meter bar slides back and forth, click "Shoot!" to lock it in.
+- Shots are randomized between 1-pointer (free throw, easy/slow), 2-pointer (normal), and 3-pointer (hardest — narrow target, fastest meter speed), each worth different points.
+- Ball animates toward the hoop based on shot accuracy (Perfect / Good / Airball).
+- Full dark-gold "luxury" visual theme (`style.css`) — styled quiz buttons, scoreboard, shot buttons, plus a hand-built hoop (backboard + rim + net) and a shaded basketball (seams via CSS pseudo-elements), all done without images.
+- Still possibly worth adding: a "Play Again" / restart option once the quiz ends, sound effects, difficulty tuning, mobile-friendliness.
+
+## Tools set up
+
+- Git is installed and this folder is a git repo, pushed to GitHub at `https://github.com/frankiereilly3008-cell/Claude-Hoops67.git`.
+- **I run `git commit` and `git push` myself** (a friend is teaching me git separately) — Claude can help with setup steps (init, staging, remotes, explaining commands) but shouldn't run the actual commit/push unless I explicitly ask.
 
 ## What the project is
 
@@ -86,7 +109,7 @@ This is the fuller picture, but **these are NOT the only topics and concepts I w
 **Tools & workflow**
 - How a browser runs my code.
 - Basic file structure — how the HTML, CSS, and JS files link together.
-- Possibly Git basics for saving versions as I go.
+- Git basics for saving versions as I go (set up now — see "Tools set up" above).
 
 ...and more — this list is not exhaustive. There are various other topics and concepts I want to understand too, and I'll pick up plenty of other things along the way as they come up. Don't limit yourself to only what's listed here.
 
